@@ -1,7 +1,7 @@
-(ns shouter.core
-  (:use [compojure.core :only (defroutes)]
-        [ring.adapter.jetty :as ring])
-  (:require [compojure.route :as route]
+(ns shouter.web
+  (:require [compojure.core :refer [defroutes]]
+            [ring.adapter.jetty :as ring]
+            [compojure.route :as route]
             [compojure.handler :as handler]
             [shouter.controllers.shouts :as shouts]
             [shouter.views.layout :as layout]
@@ -16,11 +16,10 @@
 (def application (handler/site routes))
 
 (defn start [port]
-  (run-jetty application {:port port
-                          :join? false}))
+  (ring/run-jetty application {:port port
+                               :join? false}))
 
 (defn -main []
   (schema/migrate)
-  (let [port (Integer/parseInt (or (System/getenv "PORT") "8080"))]
+  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
     (start port)))
- 
