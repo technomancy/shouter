@@ -1,6 +1,6 @@
 (ns shouter.controllers.shouts
-  (:use [compojure.core :only (defroutes GET POST)])
-  (:require [clojure.string :as str]
+  (:require [compojure.core :refer [defroutes GET POST]]
+            [clojure.string :as str]
             [ring.util.response :as ring]
             [shouter.views.shouts :as view]
             [shouter.models.shout :as model]))

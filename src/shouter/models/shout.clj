@@ -9,4 +9,3 @@
 
 (defn create [shout]
   (sql/insert! spec :shouts [:body] [shout]))
-
