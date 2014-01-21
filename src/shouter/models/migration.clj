@@ -3,10 +3,10 @@
             [shouter.models.shout :as shout]))
 
 (defn migrated? []
-  (not (zero? (first (sql/query shout/spec
-                                [(str "select count(*) from "
-                                      "information_schema.tables "
-                                      "where table_name='shouts'")])))))
+  (-> (sql/query shout/spec
+                 [(str "select count(*) from information_schema.tables "
+                       "where table_name='shouts'")])
+      first :count pos?))
 
 (defn migrate []
   (when (not (migrated?))
