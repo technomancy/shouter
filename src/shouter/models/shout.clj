@@ -5,7 +5,7 @@
               "postgresql://localhost:5432/shouter"))
 
 (defn all []
-  (into [] (sql/query spec ["select * from shouts order by id desc"])))
+  (into [] (sql/query spec ["select * from shouts order by id desc limit 128"])))
 
 (defn create [shout]
   (sql/insert! spec :shouts [:body] [shout]))
