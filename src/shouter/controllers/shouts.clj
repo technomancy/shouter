@@ -10,7 +10,8 @@
 
 (defn create
   [shout]
-  (when-not (str/blank? shout)
+  (when-not (or (str/blank? shout)
+                (> (count shout) 512))
     (model/create shout))
   (ring/redirect "/"))
 
