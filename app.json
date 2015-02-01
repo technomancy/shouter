@@ -1,0 +1,7 @@
+{
+  "name": "Shouter - Clojure Sample app",
+  "description": "A Clojure webapp using ring, compojure and hicup libraries",
+  "repository": "https://github.com/technomancy/shouter",
+  "keywords": ["clojure", "ring", "compjure", "hickup", "demo"],
+  "addons": ["heroku-postgresql"]
+}

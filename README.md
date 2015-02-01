@@ -4,7 +4,13 @@ A simple Clojure web app, using [ring](https://github.com/ring-clojure/ring), [c
 
 Shout text strings are stored in a [postgres](http://www.postgresql.org/) database
 
-## Deploying on Heroku
+## Deploy via Heroku button
+
+  You can deploy your own copy of the Shouter app on Heroku via [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+> If you do not have an account on Heroku, you will be promted to create one for free
+
+## Deploying on Heroku manually
 
   To deploy the Shouter Clojure app on Heroku, first clone the project using `git clone clone-URL`, the clone-URL is underneat the repository menu on the right hand side of this page.
   
