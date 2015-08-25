@@ -1,11 +1,13 @@
 (ns shouter.views.shouts
   (:require [shouter.views.layout :as layout]
             [hiccup.core :refer [h]]
-            [hiccup.form :as form]))
+            [hiccup.form :as form]
+            [ring.util.anti-forgery :as anti-forgery]))
 
 (defn shout-form []
   [:div {:id "shout-form" :class "sixteen columns alpha omega"}
    (form/form-to [:post "/"]
+                 (anti-forgery/anti-forgery-field)
                  (form/label "shout" "What do you want to SHOUT?")
                  (form/text-area "shout")
                  (form/submit-button "SHOUT!"))])

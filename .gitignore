@@ -6,3 +6,6 @@ log/*
 target
 logfile
 /pg/
+.idea/
+*.iml
+.lein-*
