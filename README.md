@@ -1,5 +1,6 @@
 # shouter
 
+Test commit to trigger a build
 A simple Clojure web app, using [ring](https://github.com/ring-clojure/ring), [compojure](https://github.com/weavejester/compojure) and [hiccup](https://github.com/weavejester/hiccup).  Short text messages called "shouts" can be entered and the last 100 shouts are shown on the page.
 
 Shout text strings are stored in a [postgres](http://www.postgresql.org/) database
